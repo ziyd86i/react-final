@@ -48,6 +48,7 @@ class Getdata extends Component {
         pmt = Math.abs(pmt)
         // console.log(pmt)
         var tables = this.state.sumation
+
         for(var i=1 ; i <= this.state.month ; i++) {
             var sumInterest = (money * (this.state.interest/100) *30) /365
             var sumPrinciple = pmt - sumInterest
@@ -102,19 +103,19 @@ class Getdata extends Component {
                         </div>
                         <div className="form-group">
                             <label>อัตราดอกเบี้ย (% ต่อปี) :</label>
-                            <input type="text" className="form-control" value={this.state.interest} onChange={this.HandleInterest.bind(this)}/>
+                            <input type="number" className="form-control" value={this.state.interest} onChange={this.HandleInterest.bind(this)}/>
                         </div>
                         <div className="form-group">
                             <label>ผ่อนชำระ (งวด) :</label>
                             <input type="text" className="form-control" value={this.state.month} onChange={this.HandleMonth.bind(this)}/>
                         </div>
                         <div className="form-group">
-                            <label>อายุผู้กู้</label>
+                            <label>อายุผู้กู้ :</label>
                             <input type="text" className="form-control" onChange={this.HandleAge.bind(this)}/>
                         </div>
                         <button type="submit" className="btn btn-success">คำนวณผล</button>
                     </form>
-                
+                    <br />
                     <table className="table" align="center" >
                         <thead>
                             <tr>
